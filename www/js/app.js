@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+var app = angular.module('starter', ['ionic', 'ngCordova']);
 
-.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,4 +21,27 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-})
+});
+
+app.controller('FileTransferController', function($scope, $cordovaFileTransfer, $timer) {
+
+  $scope.testFileDownload = function () {
+    // File for download
+    var url = "http://www.gajotres.net/wp-content/uploads/2015/04/logo_radni.png";
+     
+    // File name only
+    var filename = url.split("/").pop();
+     
+    // Save location
+    var targetPath = cordova.file.externalRootDirectory + filename;
+     
+    $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
+        console.log('Success');
+    }, function (error) {
+        console.log('Error');
+    }, function (progress) {
+        // PROGRESS HANDLING GOES HERE
+    });
+  };
+
+});
