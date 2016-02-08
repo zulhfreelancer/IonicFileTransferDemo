@@ -23,7 +23,7 @@ app.run(function($ionicPlatform) {
   });
 });
 
-app.controller('FileTransferController', function($scope, $cordovaFileTransfer, $timer) {
+app.controller('FileTransferController', function($scope, $cordovaFileTransfer) {
 
   $scope.testFileDownload = function () {
     // File for download
