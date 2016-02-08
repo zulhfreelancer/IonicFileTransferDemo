@@ -9,12 +9,13 @@ The video actual link:
 https://scontent.cdninstagram.com/t50.2886-16/11769924_1164328446927429_537155619_n.mp4
 
 Test this app:
-[APK HERE]
+[Download APK](https://github.com/zulhfreelancer/IonicFileTransferDemo/blob/master/APK_INSIDE_THIS/android-debug.apk?raw=true)
 
 #### References
 
 1. [Tutorial (Part 1)](http://www.gajotres.net/using-cordova-file-transfer-plugin-with-ionic-framework/)
 2. [Tutorial (Part 2)](http://www.gajotres.net/using-cordova-file-transfer-plugin-with-ionic-framework/2/)
+3. [$cordovaFile ngCordova Documentation](http://ngcordova.com/docs/plugins/file/)
 
 #### Notes
 
