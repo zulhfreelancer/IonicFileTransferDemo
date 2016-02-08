@@ -26,19 +26,25 @@ app.run(function($ionicPlatform) {
 app.controller('FileTransferController', function($scope, $cordovaFileTransfer) {
 
   $scope.testFileDownload = function () {
-    // File for download
-    var url = "http://www.gajotres.net/wp-content/uploads/2015/04/logo_radni.png";
-     
+    // File for download (photo OR video)
+    // var url = "http://www.gajotres.net/wp-content/uploads/2015/04/logo_radni.png";
+    var url = "https://scontent.cdninstagram.com/t50.2886-16/11769924_1164328446927429_537155619_n.mp4";
+    alert(url);
+
     // File name only
     var filename = url.split("/").pop();
+    alert(filename);
      
     // Save location
     var targetPath = cordova.file.externalRootDirectory + filename;
+    alert(targetPath);
+
+    alert("Downloading...");
      
     $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
-        console.log('Success');
+        alert('Success!');
     }, function (error) {
-        console.log('Error');
+        alert('Error!');
     }, function (progress) {
         // PROGRESS HANDLING GOES HERE
     });
